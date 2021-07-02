@@ -1,7 +1,7 @@
 package com.example.Notes.Repository;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.LiveData;
 
 import com.example.Notes.Dao.NotesDao;
 import com.example.Notes.Database.NotesDatabase;

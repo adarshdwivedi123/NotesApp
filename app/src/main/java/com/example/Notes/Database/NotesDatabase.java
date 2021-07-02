@@ -20,7 +20,7 @@ public abstract class  NotesDatabase  extends RoomDatabase {
         {
             INSTANCE= Room.databaseBuilder(context.getApplicationContext(),
                     NotesDatabase.class,
-                    "Notes_Database").build();
+                    "Notes_Database").allowMainThreadQueries().build();
         }
             return  INSTANCE;
     }

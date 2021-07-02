@@ -1,6 +1,6 @@
 package com.example.Notes.Dao;
 
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.LiveData;
 
 import androidx.room.Insert;
 import androidx.room.Query;
