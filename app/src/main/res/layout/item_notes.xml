@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp">
         <View
-            android:id="@+id/notesPriority"
+            android:id="@+id/notespriority"
             android:layout_margin="10dp"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -35,7 +35,7 @@
                 android:text="subTitle"/>
 
             <TextView
-                android:id="@+id/notesDate"
+                android:id="@+id/notesdate"
                 android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

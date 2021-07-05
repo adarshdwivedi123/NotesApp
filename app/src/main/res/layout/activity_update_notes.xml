@@ -13,6 +13,7 @@
         android:orientation="vertical"
         >
         <EditText
+            android:id="@+id/uptitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -25,6 +26,7 @@
             android:hint="Title"
             />
         <EditText
+            android:id="@+id/upSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -53,20 +55,22 @@
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="sans-serif"
-                android:text="Priority"/>
+                android:text="upPriority"/>
 
             <ImageView
-
+                android:id="@+id/greenPriority"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_baseline_done_24"
+
                 android:background="@drawable/green_shape"/>
             <ImageView
+                android:id="@+id/yellowPriority"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:background="@drawable/yellow_shape"/>
             <ImageView
+                android:id="@+id/RedPriority"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_margin="10dp"
@@ -75,6 +79,7 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/upNotes"
             android:background="@drawable/edit_text_bac"
             android:layout_width="match_parent"
             android:layout_height="300dp"
@@ -85,7 +90,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:padding="15dp"
-            android:hint="SubTitle"
+            android:text="Notes"
             />
 
     </LinearLayout>
@@ -94,24 +99,16 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_alignParentEnd="true"
-
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:backgroundTint="@color/red"
-        android:id="@+id/UpdasteNodeBtn"
+        android:id="@+id/UpdateNodeBtn"
         android:src="@drawable/ic_baseline_done_24"
-
         android:layout_marginTop="26dp"
         android:layout_marginEnd="39dp"
         android:layout_marginRight="39dp"
         android:layout_marginBottom="36dp" />
-
-
-
-
-
 </RelativeLayout>
 
 

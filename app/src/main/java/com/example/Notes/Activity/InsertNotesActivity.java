@@ -39,7 +39,6 @@ public class InsertNotesActivity extends AppCompatActivity {
                 binding.greenPriority.setImageResource(R.drawable.ic_baseline_done_24);
                 binding.yellowPriority.setImageResource(0);
                 binding.RedPriority.setImageResource(0);
-
                 priority ="1";
             }
         });
@@ -49,7 +48,6 @@ public class InsertNotesActivity extends AppCompatActivity {
                 binding.greenPriority.setImageResource(0);
                 binding.yellowPriority.setImageResource(R.drawable.ic_baseline_done_24);
                 binding.RedPriority.setImageResource(0);
-
                 priority ="2";
             }
         });
@@ -59,7 +57,6 @@ public class InsertNotesActivity extends AppCompatActivity {
                 binding.greenPriority.setImageResource(0);
                 binding.yellowPriority.setImageResource(0);
                 binding.RedPriority.setImageResource(R.drawable.ic_baseline_done_24);
-
                 priority ="3";
 
             }
@@ -83,7 +80,7 @@ public class InsertNotesActivity extends AppCompatActivity {
 
     private void CreateNotes(String title, String subtitle, String notes) {
         Date date=new Date();
-        CharSequence sequence= DateFormat.format("MMMM d,YYYY",date.getTime());
+        CharSequence sequence= DateFormat.format("MMMM d,yyyy",date.getTime());
 
 
         Notes notes1=new Notes();

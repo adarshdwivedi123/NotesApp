@@ -1,6 +1,7 @@
 package com.example.Notes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,7 +25,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
                 newNotesBtn=findViewById(R.id.newNodeBtn);
+        notesViewModal= ViewModelProviders.of(this).get(NotesViewModal.class);
+
                 notesRecylerview=findViewById(R.id.notesReclerView);
+
+
+
                 newNotesBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -36,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
                     notesRecylerview.setLayoutManager(new GridLayoutManager(this,2));
                     adapter=new NotesAdapter(MainActivity.this,notes);
                     notesRecylerview.setAdapter(adapter);
-
-
                 });
-
     }
 }
