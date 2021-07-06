@@ -6,7 +6,15 @@
     android:layout_height="match_parent"
     android:background="#EBEBEB"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:id="@+id/filter"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/filter"
         android:layout_width="match_parent"
         android:id="@+id/notesReclerView"
         android:layout_height="match_parent"/>

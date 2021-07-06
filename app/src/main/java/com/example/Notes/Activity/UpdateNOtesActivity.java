@@ -1,11 +1,17 @@
 package com.example.Notes.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.Notes.Modal.Notes;
@@ -13,6 +19,7 @@ import com.example.Notes.R;
 import com.example.Notes.ViewModal.NotesViewModal;
 import com.example.Notes.databinding.ActivityInsertNotesBinding;
 import com.example.Notes.databinding.ActivityUpdateNotesBinding;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.Date;
 
@@ -22,6 +29,8 @@ public class UpdateNOtesActivity extends AppCompatActivity {
     String stitle,ssubtitle,snotes,spriority;
     int iid;
     NotesViewModal notesViewModal;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,8 +111,53 @@ public class UpdateNOtesActivity extends AppCompatActivity {
                 notesViewModal.insertNote(updateNotes);
 
                 Toast.makeText(UpdateNOtesActivity.this, "Notes Updated Succsfully", Toast.LENGTH_SHORT).show();
+                finish();
             }
+
+
+
         });
+
+
+
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.delete_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() ==R.id.ic_delete)
+
+        {
+            BottomSheetDialog  SheetDialog=new BottomSheetDialog(UpdateNOtesActivity.this,R.style.BottomSheetStyle);
+            View view= LayoutInflater.from(UpdateNOtesActivity.this).inflate(R.layout.delete_bottom_sheet,(LinearLayout)findViewById(R.id.bottomSheet));
+            SheetDialog.setContentView(view);
+            TextView yes,no;
+            yes=view.findViewById(R.id.delete_yes);
+            no=view.findViewById(R.id.delete_no);
+            yes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    notesViewModal.deleteNote(iid);
+                    finish();
+                }
+            });
+            no.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SheetDialog.dismiss();
+                }
+            });
+            SheetDialog.show();
+
+
+
+        }
+        return true;
 
     }
 }
