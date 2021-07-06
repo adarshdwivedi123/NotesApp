@@ -14,16 +14,27 @@ import com.example.Notes.MainActivity;
 import com.example.Notes.Modal.Notes;
 import com.example.Notes.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NotesAdapter  extends RecyclerView.Adapter<NotesAdapter.notesViewholder>{
     MainActivity mainActivity;
     List<Notes> notes;
+    List<Notes>allNotesItem;
 
     public NotesAdapter(MainActivity mainActivity, List<Notes> notes) {
         this.mainActivity=mainActivity;
         this.notes=notes;
+        allNotesItem=new ArrayList<>(notes);
+
+
     }
+    public void searchNotes(List<Notes> filteredName)
+    {
+        this.notes=filteredName;
+        notifyDataSetChanged();// notify se pta chl jata hai unke andar chnages huye hai
+    }
+
 
     @NonNull
     @Override

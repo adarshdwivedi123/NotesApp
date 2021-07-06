@@ -12,12 +12,16 @@ import java.util.List;
 public class NotesRepository {
     public NotesDao  notesDao;
     public LiveData<List<Notes>>getallNotes;
+    public LiveData<List<Notes>>hightolow;
+    public LiveData<List<Notes>>lowtohigh;
 
     public NotesRepository(Application application)
     {
         NotesDatabase  database=NotesDatabase.getDatabaseInstance(application);
         notesDao=database.notesDao();
         getallNotes=notesDao.getallNotes();
+        hightolow=notesDao.highToLow();
+        lowtohigh=notesDao.LowToHigh();
 
     }
   public  void insertNotes(Notes notes)
